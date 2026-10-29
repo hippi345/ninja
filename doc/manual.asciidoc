@@ -282,12 +282,6 @@ The default progress status is `"[%f/%t] "` (note the trailing space
 to separate from the build rule). Another example of possible progress status
 could be `"[%u/%r/%f] "`.
 
-Edges in the `console` pool print this line when they start, because their
-output is not buffered and the line is not refreshed when they finish. On
-that line, `%f` and `$finished` (and the percentage in `%p` / `$progress`)
-include the edge that is about to run, so the step number matches the one
-shown for other edges when they complete.
-
 The `--status FMT` command-line flag also configures the progress status,
 but uses Ninja's regular variable-expansion syntax (`$var` or `${var}`)
 instead of `%`-escapes, with descriptive variable names. When passed,
